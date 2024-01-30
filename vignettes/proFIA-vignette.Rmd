@@ -90,7 +90,7 @@ Note:
 As all files need to be processed 2 times, one for noise estimation and one
 for model estimation, this step is the most time consuming of the workflow.
 
-```{r profiaset,fig.show="hide",message=FALSE}
+```{r profiaset,fig.show="hide",message=FALSE, warning=FALSE}
 # defining the ppm parameter adapted to the Orbitrap Fusion
 ppm <- 2
 
@@ -295,7 +295,7 @@ dataMatrix <- peakTable[,1:nrow(phenoClasses(plasSet))]
 ```
 
 ```{r plot_summary_opls, echo=FALSE}
-plasSet.opls <- opls(t(dataMatrix),log10(vconcentration),predI = 1,log10L = TRUE, orthoI = NA, devNewL = FALSE,crossvalI=5)
+plasSet.opls <- opls(t(dataMatrix),log10(vconcentration),predI = 1,log10L = TRUE, orthoI = NA,crossvalI=5)
 ```
 ```{r plot_summary_opls_h, eval=FALSE}
 plasSet.opls <- opls(t(peakTable),scale(log10(vconcentration)),predI = 1,log10L = TRUE, orthoI = NA)
