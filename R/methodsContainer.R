@@ -568,8 +568,8 @@ setMethod("plot", "proFIAset",function(x, type=c("sample","class"),...){
 	
 	tempMatrix <- t(x@dataMatrix)
 	tempMatrix[which(is.na(tempMatrix))] <- 0
-	res_pca <- suppressMessages(opls(tempMatrix,plotL=FALSE,predI=2,log10L=TRUE,crossvalI=min(7,nrow(tempMatrix)-1)))
-	plot(res_pca,type="x-score",parAsColFcVn=x@classes[,2],parTitleL=FALSE,parDevNewL=FALSE)
+	res_pca <- suppressMessages(opls(tempMatrix,predI=2,log10L=TRUE,crossvalI=min(7,nrow(tempMatrix)-1)))
+	plot(res_pca,type="x-score",parAsColFcVn=x@classes[,2],parTitleL=FALSE)
 	title(title_pca, line = 2.5)
 	par(mar=vomar)
 	return(invisible(NA))
